@@ -3,19 +3,12 @@ import xlsxwriter
 def segitigaExcel(kata):
     print(f"Kata awal : {kata}") 
 
-    panjangKalimat = len(kata)
-    stringTampung = [] 
     penambah = 1 
     angkaTotal = 0
     baris = 0 
     huruf = 0
     listString2 = []
 
-    for i in range(panjangKalimat): 
-        if kata[i] == " ": 
-            i += 1
-        else: 
-            stringTampung.append(kata[i]) 
     kata = kata.replace(" ", "")
 
     while angkaTotal <= len(kata): 
