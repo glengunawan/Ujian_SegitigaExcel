@@ -1,9 +1,9 @@
 import xlsxwriter
 
-def segitigaExcel(kalimat):
-    print(f"Kalimat awal : {kalimat}") 
+def segitigaExcel(kata):
+    print(f"Kata awal : {kata}") 
 
-    panjangKalimat = len(kalimat)
+    panjangKalimat = len(kata)
     stringTampung = [] 
     penambah = 1 
     angkaTotal = 0
@@ -12,14 +12,14 @@ def segitigaExcel(kalimat):
     listString2 = []
 
     for i in range(panjangKalimat): 
-        if kalimat[i] == " ": 
+        if kata[i] == " ": 
             i += 1
         else: 
-            stringTampung.append(kalimat[i]) 
-    kalimat = kalimat.replace(" ", "")
+            stringTampung.append(kata[i]) 
+    kata = kata.replace(" ", "")
 
-    while angkaTotal <= len(kalimat): 
-        if angkaTotal != len(kalimat): 
+    while angkaTotal <= len(kata): 
+        if angkaTotal != len(kata): 
             baris += 1 
             angkaTotal = angkaTotal + penambah 
             penambah += 1
@@ -32,12 +32,11 @@ def segitigaExcel(kalimat):
         for a in range(baris):
             listString=[]
             for tanda in range(a+1): 
-                listString.append(kalimat[huruf])
+                listString.append(kata[huruf])
                 huruf += 1 
                 tanda +=1
             listString2.append(listString)
 
-        print(listString2)
         book = xlsxwriter.Workbook("2.xlsx") 
         sheet = book.add_worksheet("Jawaban") 
 
